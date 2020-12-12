@@ -22,14 +22,34 @@ const RepositoryItemStats = ({ repository }) => {
         }
     });
 
+    const modifiedStarCount = () => {
+        let newCount = 0;
+
+        repository.stargazersCount > 999
+            ? newCount = Math.round(((repository.stargazersCount / 1000)*10))/10 + 'k'
+            : newCount = repository.stargazersCount;
+        
+        return newCount;
+    };
+
+    const modifiedForkCount = () => {
+        let newCount = 0;
+
+        repository.forksCount > 999
+            ? newCount = Math.round(((repository.forksCount / 1000)*10))/10 + 'k'
+            : newCount = repository.forksCount;
+        
+        return newCount;
+    };
+
     return (
         <View style={styles.flexContainer}>
             <View style={styles.flexItem}>
-                <Text style={styles.flexText}>{repository.stargazersCount}</Text>
+                <Text style={styles.flexText}>{modifiedStarCount()}</Text>
                 <Text style={styles.flexText}>Stars</Text>
             </View>
             <View style={styles.flexItem}>
-                <Text style={styles.flexText}>{repository.forksCount}</Text>
+                <Text style={styles.flexText}>{modifiedForkCount()}</Text>
                 <Text style={styles.flexText}>Forks</Text>
             </View>
             <View style={styles.flexItem}>
