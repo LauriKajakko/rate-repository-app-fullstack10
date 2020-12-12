@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Text from './Text';
+import theme from '../theme';
 
 const RepositoryItemStats = ({ repository }) => {
 
     const styles = StyleSheet.create({
         flexContainer: {
             display: 'flex',
-            flexDirection: 'row'
+            flexDirection: 'row',
+            backgroundColor: theme.colors.ItemBackground
         },
         flexItem: {
             paddingTop: 20,

@@ -15,12 +15,12 @@ const RepositoryItem = ({ repository }) => {
         flexContainer: {
             display: 'flex',
             flexDirection: 'row',
-            paddingEnd: 50
+            paddingEnd: 50,
+            backgroundColor: theme.colors.ItemBackground
         },
         flexItem: {
             paddingHorizontal: 10,
             paddingTop: 10,
-            
         },
     });
 
@@ -39,7 +39,7 @@ const RepositoryItem = ({ repository }) => {
                     <RepositoryItemInfo repository={repository} />
                 </View>
             </View>
-            <View>
+            <View >
                 <RepositoryItemStats repository={repository} />
             </View>
         </View>

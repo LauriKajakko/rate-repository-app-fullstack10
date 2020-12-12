@@ -7,8 +7,10 @@ const RepositoryItemInfo = ({ repository }) => {
 
     const styles = StyleSheet.create({
         languageText: {
+            borderRadius: theme.borderRadius.normal,
             backgroundColor: theme.colors.primary,
             color: 'white',
+            paddingHorizontal: 2
         },
         flexContainer: {
             display: 'flex',
