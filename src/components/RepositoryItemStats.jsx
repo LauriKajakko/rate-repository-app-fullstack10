@@ -45,19 +45,19 @@ const RepositoryItemStats = ({ repository }) => {
     return (
         <View style={styles.flexContainer}>
             <View style={styles.flexItem}>
-                <Text style={styles.flexText}>{modifiedStarCount()}</Text>
+                <Text style={styles.flexText} fontWeight='bold'>{modifiedStarCount()}</Text>
                 <Text style={styles.flexText}>Stars</Text>
             </View>
             <View style={styles.flexItem}>
-                <Text style={styles.flexText}>{modifiedForkCount()}</Text>
+                <Text style={styles.flexText} fontWeight='bold'>{modifiedForkCount()}</Text>
                 <Text style={styles.flexText}>Forks</Text>
             </View>
             <View style={styles.flexItem}>
-                <Text style={styles.flexText}>{repository.ratingAverage}</Text>
+                <Text style={styles.flexText} fontWeight='bold'>{repository.ratingAverage}</Text>
                 <Text style={styles.flexText}>Rating</Text>
             </View>
             <View style={styles.flexItem}>
-                <Text style={styles.flexText}>{repository.reviewCount}</Text>
+                <Text style={styles.flexText} fontWeight='bold'>{repository.reviewCount}</Text>
                 <Text style={styles.flexText}>Reviews</Text>
             </View>
         </View>
