@@ -1,16 +1,49 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
+import theme from '../theme';
+import RepositoryItemInfo from './RepositoryItemInfo';
+import RepositoryItemStats from './RepositoryItemStats';
 
-const RepositoryItem = ({ repository }) => (
-    <View>
-        <Text>Full name: {repository.fullName}</Text>
-        <Text>Description: {repository.description}</Text>
-        <Text>Language: {repository.language}</Text>
-        <Text>Stars: {repository.forksCount}</Text>
-        <Text>Forks: {repository.stargazersCount}</Text>
-        <Text>Reviews: {repository.ratingAverage}</Text>
-        <Text>Rating: {repository.reviewCount}</Text>
-    </View>
-);
+const RepositoryItem = ({ repository }) => {
+
+    const styles = StyleSheet.create({
+        imageStyle: {
+            width: 50,
+            height: 50,
+            borderRadius: theme.borderRadius.normal
+        },
+        flexContainer: {
+            display: 'flex',
+            flexDirection: 'row',
+            paddingEnd: 50
+        },
+        flexItem: {
+            paddingHorizontal: 10,
+            paddingTop: 10,
+            
+        },
+    });
+
+    return (
+        <View>
+            <View style={styles.flexContainer}>
+                <View style={styles.flexItem}>
+                    <Image 
+                        style={styles.imageStyle}
+                        source={{
+                            uri: repository.ownerAvatarUrl
+                        }}
+                    />
+                </View>
+                <View style={styles.flexItem}>
+                    <RepositoryItemInfo repository={repository} />
+                </View>
+            </View>
+            <View>
+                <RepositoryItemStats repository={repository} />
+            </View>
+        </View>
+    );
+};
 
 export default RepositoryItem;

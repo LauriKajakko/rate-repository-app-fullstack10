@@ -4,7 +4,9 @@ const theme = {
       textSecondary: '#586069',
       primary: '#0366d6',
       barText: 'white',
-      barBackground: '#24292e'
+      barBackground: '#24292e',
+      MainBackground: '#e1e4e8',
+      ItemBackground: 'white'
     },
     fontSizes: {
       body: 14,
@@ -12,6 +14,9 @@ const theme = {
     },
     fonts: {
       main: 'System',
+    },
+    borderRadius: {
+      normal: 4,
     },
     fontWeights: {
       normal: '400',
