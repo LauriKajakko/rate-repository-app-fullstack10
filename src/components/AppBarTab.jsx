@@ -1,9 +1,10 @@
 import React from 'react';
 import Text from './Text';
-import { View, TouchableWithoutFeedback, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import {Link} from 'react-router-native';
 
 
-const AppBarTab = ({ text }) => {
+const AppBarTab = ({ text, to }) => {
     const styles = StyleSheet.create({
         flexItem: {
             paddingTop: 20,
@@ -13,11 +14,11 @@ const AppBarTab = ({ text }) => {
     });
 
     return(
-    <TouchableWithoutFeedback onPress={() => alert('Pressed!')}>
+    <Link to={to} component={TouchableOpacity} activeOpacity={0.8}>
       <View style={styles.flexItem}>
         <Text color='barText' fontSize='subheading' fontWeight='bold'> {text} </Text>        
       </View>
-    </TouchableWithoutFeedback>
+    </Link>
   );
 };
 
