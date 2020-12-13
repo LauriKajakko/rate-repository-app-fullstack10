@@ -1,7 +1,7 @@
 import React from 'react';
 import Text from './Text';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import {Link} from 'react-router-native';
+import { Link } from 'react-router-native';
 
 
 const AppBarTab = ({ text, to }) => {
@@ -14,12 +14,12 @@ const AppBarTab = ({ text, to }) => {
     });
 
     return(
-    <Link to={to} component={TouchableOpacity} activeOpacity={0.8}>
-      <View style={styles.flexItem}>
-        <Text color='barText' fontSize='subheading' fontWeight='bold'> {text} </Text>        
-      </View>
-    </Link>
-  );
+      <Link to={to} component={TouchableOpacity} activeOpacity={0.8}>
+        <View style={styles.flexItem}>
+          <Text color='barText' fontSize='subheading' fontWeight='bold'> {text} </Text>        
+        </View>
+      </Link>
+    );
 };
 
 export default AppBarTab;
