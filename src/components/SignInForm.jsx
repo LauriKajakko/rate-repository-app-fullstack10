@@ -6,10 +6,10 @@ import theme from '../theme';
 
 const styles = StyleSheet.create({
     flexContainer: {
-      backgroundColor: 'white',
       flexDirection: 'column',
       display: 'flex',
       justifyContent: 'flex-end',
+      margin: 10,
     },
     button: {
       backgroundColor: theme.colors.primary,
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
-      margin: 10
+      marginVertical: 10
     },
     buttonText: {
       marginTop: 5, 
@@ -34,7 +34,7 @@ const SignInForm = ({ onSubmit }) => {
         <View style={styles.flexContainer}>
             <FormikTextInput name="username" placeholder="Username"/>
             <FormikTextInput name="password" placeholder="Password" secureTextEntry/>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={onSubmit}>
                 <Text style={styles.buttonText}>Sign in</Text>
             </TouchableOpacity>
         </View>
